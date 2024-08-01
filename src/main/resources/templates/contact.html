@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Contact</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1 0 auto;
+        }
+        .footer {
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="fragments/navigation :: navbar"></div>
+<div class="container content">
+    <header class="jumbotron my-4">
+        <h1 class="display-3">Contact Us</h1>
+        <p class="lead">Get in touch with us for any queries or support.</p>
+    </header>
+    <div class="row">
+        <div class="col-lg-6">
+            <h2>Contact Information</h2>
+            <p>Email: support@eventticketing.com</p>
+            <p>Phone: +123 456 7890</p>
+            <p>Address: 123 Event Street, Event City, EV 12345</p>
+        </div>
+        <div class="col-lg-6">
+            <img src="/images/images12.jpg" class="img-fluid" alt="Contact Image">
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

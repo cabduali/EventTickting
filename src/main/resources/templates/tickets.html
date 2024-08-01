@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tickets</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1 0 auto;
+        }
+        .footer {
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="fragments/navigation :: navbar"></div>
+<div class="container content">
+    <h1 class="mt-5">Tickets</h1>
+    <form class="form-inline my-2 my-lg-0" th:action="@{/tickets/search}" method="get">
+        <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search tickets" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <a class="btn btn-primary mt-3 mb-3" th:href="@{/tickets/new}">Create New Ticket</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Attendee Name</th>
+            <th>Email</th>
+            <th>Event</th>
+            <th>Seat Number</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="ticket : ${tickets}">
+            <td th:text="${ticket.attendeeName}"></td>
+            <td th:text="${ticket.email}"></td>
+            <td th:text="${ticket.event.name}"></td>
+            <td th:text="${ticket.seatNumber}"></td>
+            <td th:text="${ticket.price}"></td>
+            <td>
+                <a class="btn btn-info" th:href="@{/tickets/view/{id}(id=${ticket.id})}">View</a>
+                <a class="btn btn-warning" th:href="@{/tickets/edit/{id}(id=${ticket.id})}">Edit</a>
+                <a class="btn btn-danger" th:href="@{/tickets/delete/{id}(id=${ticket.id})}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Events</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1 0 auto;
+        }
+        .footer {
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="fragments/navigation :: navbar"></div>
+<div class="container content">
+    <h1 class="mt-5">Events</h1>
+    <form class="form-inline my-2 my-lg-0" th:action="@{/events/search}" method="get">
+        <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search events" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <a class="btn btn-primary mt-3 mb-3" th:href="@{/events/new}">Create New Event</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Location</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="event : ${events}">
+            <td th:text="${event.name}"></td>
+            <td th:text="${event.date}"></td>
+            <td th:text="${event.location}"></td>
+            <td>
+                <a class="btn btn-info" th:href="@{/events/view/{id}(id=${event.id})}">View</a>
+                <a class="btn btn-warning" th:href="@{/events/edit/{id}(id=${event.id})}">Edit</a>
+                <a class="btn btn-danger" th:href="@{/events/delete/{id}(id=${event.id})}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

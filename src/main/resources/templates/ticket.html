@@ -1,0 +1,60 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <title>Ticket Details</title>-->
+<!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="container">-->
+<!--    <h1 class="mt-4">Ticket Details</h1>-->
+<!--    <p><strong>Attendee Name:</strong> <span th:text="${ticket.attendeeName}"></span></p>-->
+<!--    <p><strong>Email:</strong> <span th:text="${ticket.email}"></span></p>-->
+<!--    <p><strong>Event:</strong> <span th:text="${ticket.event.name}"></span></p>-->
+<!--    <p><strong>Seat Number:</strong> <span th:text="${ticket.seatNumber}"></span></p>-->
+<!--    <a class="btn btn-primary" th:href="@{/tickets}">Back to Tickets</a>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Ticket Details</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Ticket Details</h1>
+    <div class="card">
+        <div class="card-header">
+            Ticket Information
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Attendee: <span th:text="${ticket.attendeeName}"></span></h5>
+            <p class="card-text">Email: <span th:text="${ticket.email}"></span></p>
+            <p class="card-text">Event: <span th:text="${ticket.event != null ? ticket.event.name : 'N/A'}"></span></p>
+            <p class="card-text">Seat Number: <span th:text="${ticket.seatNumber}"></span></p>
+        </div>
+    </div>
+    <a class="btn btn-primary" th:href="@{/tickets}">Back to Tickets</a>
+</div>
+</body>
+</html>
+

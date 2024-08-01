@@ -1,0 +1,53 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <title>Home</title>-->
+<!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="container">-->
+<!--    <h1 class="mt-4">Welcome to Event Ticketing</h1>-->
+<!--    <p>Manage your events and tickets with ease.</p>-->
+<!--    <a class="btn btn-primary" th:href="@{/events}">View Events</a>-->
+<!--    <a class="btn btn-primary" th:href="@{/tickets}">View Tickets</a>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #007bff;
+        }
+        .btn-primary, .btn-secondary {
+            width: 200px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Welcome to the Event Ticketing System</h1>
+    <p>Browse and manage events, and purchase tickets for your favorite events!</p>
+    <div class="mt-4">
+        <a class="btn btn-primary" th:href="@{/events}">View Events</a>
+        <a class="btn btn-secondary" th:href="@{/tickets}">View Tickets</a>
+    </div>
+</div>
+</body>
+</html>
+

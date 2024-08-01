@@ -1,0 +1,50 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <title>Event Details</title>-->
+<!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="container">-->
+<!--    <h1 class="mt-4" th:text="${event.name}"></h1>-->
+<!--    <p th:text="${event.description}"></p>-->
+<!--    <p><strong>Date:</strong> <span th:text="${#dates.format(event.date, 'yyyy-MM-dd')}"></span></p>-->
+<!--    <p><strong>Location:</strong> <span th:text="${event.location}"></span></p>-->
+<!--    <p><strong>Price:</strong> $<span th:text="${event.price}"></span></p>-->
+<!--    <a class="btn btn-primary" th:href="@{/events}">Back to Events</a>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Event Details</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+    <h1 th:text="${event.name}" class="mb-4"></h1>
+    <p th:text="${event.description}"></p>
+    <p><strong>Date:</strong> <span th:text="${#dates.format(event.date, 'yyyy-MM-dd')}"></span></p>
+    <p><strong>Location:</strong> <span th:text="${event.location}"></span></p>
+    <p><strong>Price:</strong> $<span th:text="${event.price}"></span></p>
+    <a class="btn btn-primary" th:href="@{/events}">Back to Events</a>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Event</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5">View Event</h1>
+    <div class="card">
+        <div class="card-header">
+            <h2 th:text="${event.name}"></h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Date:</strong> <span th:text="${event.date}"></span></p>
+            <p><strong>Location:</strong> <span th:text="${event.location}"></span></p>
+        </div>
+    </div>
+    <a class="btn btn-primary mt-3" th:href="@{/events}">Back to Events</a>
+</div>
+</body>
+</html>

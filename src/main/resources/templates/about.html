@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>About</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1 0 auto;
+        }
+        .footer {
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="fragments/navigation :: navbar"></div>
+<div class="container content">
+    <header class="jumbotron my-4">
+        <h1 class="display-3">About Us</h1>
+        <p class="lead">Learn more about our company and our mission to provide the best event ticketing experience.</p>
+    </header>
+    <div class="row">
+        <div class="col-lg-6">
+            <h2>Our Mission</h2>
+            <p>We aim to simplify the process of buying and managing event tickets, ensuring a seamless experience for both event organizers and attendees.</p>
+        </div>
+        <div class="col-lg-6">
+            <img src="/images/images.jpeg" class="img-fluid" alt="About Image">
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

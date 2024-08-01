@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .content {
+            flex: 1 0 auto;
+        }
+        .footer {
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="fragments/navigation :: navbar"></div>
+<div class="container content">
+    <header class="jumbotron my-4">
+        <h1 class="display-3">Welcome to Event Ticketing</h1>
+        <p class="lead">Your one-stop solution for managing and purchasing event tickets.</p>
+        <a href="/tickets" class="btn btn-primary btn-lg">Browse Tickets</a>
+    </header>
+    <div class="row">
+        <div class="col-lg-4">
+            <img src="/images/images6.png" class="img-fluid" alt="Event Image 1">
+        </div>
+        <div class="col-lg-4">
+            <img src="/images/images7.jpg" class="img-fluid" alt="Event Image 2">
+        </div>
+        <div class="col-lg-4">
+            <img src="/images/images8.jpg" class="img-fluid" alt="Event Image 3">
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/footer :: footer" class="footer"></div>
+</body>
+</html>
